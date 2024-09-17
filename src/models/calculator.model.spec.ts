@@ -81,7 +81,7 @@ describe('CalculatorModel', (): void => {
     // calculator.pressNumericKey(NumericKeys.FIVE);
     const displayValue: string = calculator.display();
   
-    expect(displayValue).toEqual('true');
+    expect(displayValue).toEqual('5');
   
   });
 

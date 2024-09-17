@@ -6,6 +6,7 @@ import { ICalculatorModel } from '../interfaces/calculator-model.interface';
 
 export class CalculatorModel implements ICalculatorModel {
   private _buffer: string = '';
+  // private array: string[];
 
   public pressNumericKey(key: NumericKeys): void {
     this._buffer += key;
@@ -16,10 +17,11 @@ export class CalculatorModel implements ICalculatorModel {
   }
 
   public pressActionKey(key: ActionKeys): void {
-    // this._buffer += key;
-    // if the key is numeric, then operator, numeric
-    const sum = 2 + 3
-    // this._buffer.evaluate
+    this._buffer += key;
+ 
+    const number = parseInt(this._buffer[0]) + parseInt(this._buffer[2])
+    this._buffer =  number.toString()
+    
   }
 
   public display(): string {
