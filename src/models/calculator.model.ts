@@ -18,7 +18,6 @@ export class CalculatorModel implements ICalculatorModel {
 
   public pressActionKey(key: ActionKeys): void {
     this._buffer += key;
- 
     const number = parseInt(this._buffer[0]) + parseInt(this._buffer[2])
     this._buffer =  number.toString()
     

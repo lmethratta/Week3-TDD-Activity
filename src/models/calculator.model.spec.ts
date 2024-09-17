@@ -70,20 +70,48 @@ describe('CalculatorModel', (): void => {
   
   });
 
-  it('should display `true` when `2` key is pressed followed by the `+` key followed by the `3` key', (): void => {
+  it('should display `5` when `2` key is pressed followed by the `+` key followed by the `3` key', (): void => {
 
     calculator.pressNumericKey(NumericKeys.TWO);
     calculator.pressOperatorKey(OperatorKeys.PLUS);
     calculator.pressNumericKey(NumericKeys.THREE);
     calculator.pressActionKey(ActionKeys.EQUALS);
-    // calculator.pressActionKey(ActionKeys.EQUALS);
-    // calculator.pressActionKey(ActionKeys.EQUALS);
-    // calculator.pressNumericKey(NumericKeys.FIVE);
     const displayValue: string = calculator.display();
   
     expect(displayValue).toEqual('5');
   
   });
+
+
+  it('should display `4` when `2` key is pressed followed by the `+` key followed by the `3` key followed by the `-` key followed by the `1` key', (): void => {
+
+    calculator.pressNumericKey(NumericKeys.TWO);
+    calculator.pressOperatorKey(OperatorKeys.PLUS);
+    calculator.pressNumericKey(NumericKeys.THREE);
+    calculator.pressOperatorKey(OperatorKeys.MINUS);
+    calculator.pressNumericKey(NumericKeys.ONE);
+    calculator.pressActionKey(ActionKeys.EQUALS);
+    const displayValue: string = calculator.display();
+  
+    expect(displayValue).toEqual('4');
+  
+  });
+
+
+  it('should display `14` when `2` key is pressed followed by the `+` key followed by the `3` key followed by the `*` key followed by the `4` key', (): void => {
+
+    calculator.pressNumericKey(NumericKeys.TWO);
+    calculator.pressOperatorKey(OperatorKeys.PLUS);
+    calculator.pressNumericKey(NumericKeys.THREE);
+    calculator.pressOperatorKey(OperatorKeys.MULT);
+    calculator.pressNumericKey(NumericKeys.FOUR);
+    calculator.pressActionKey(ActionKeys.EQUALS);
+    const displayValue: string = calculator.display();
+  
+    expect(displayValue).toEqual('14');
+  
+  });
+
 
 
 
