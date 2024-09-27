@@ -107,7 +107,7 @@ describe('CalculatorModel', (): void => {
     calculator.pressNumericKey(NumericKeys.FOUR);
     calculator.pressActionKey(ActionKeys.EQUALS);
     const displayValue: string = calculator.display();
-  
+
     expect(displayValue).toEqual('14');
   
   });
